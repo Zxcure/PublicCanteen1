@@ -12,6 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+using PublicCanteen.Windows;
+using PublicCanteen.DB;
+using PublicCanteen.Classes;
+
 namespace PublicCanteen.Windows
 {
     /// <summary>
@@ -22,6 +26,36 @@ namespace PublicCanteen.Windows
         public ListOfDishesWindow()
         {
             InitializeComponent();
+
+            GetListDisd();
+            GetListCategoryDisd();
+        }
+
+
+        void GetListDisd()
+        {
+            LvDish.ItemsSource = EFClass.entities.Dish.ToList();
+        }
+
+        void GetListCategoryDisd()
+        {
+            lvCategoryDish.ItemsSource = EFClass.entities.CategoryDish.ToList();
+        }
+
+        private void btnAddToCart_Click(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            if (button == null)
+            {
+                return;
+            }
+            var dish = button.DataContext as DB.Dish; // получаем выбранную запись
+                      
+
+            CartListClass.dishes.Add(dish);
+
+            GetListDisd();
+            GetListCategoryDisd();
         }
     }
 }

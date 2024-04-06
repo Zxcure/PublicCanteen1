@@ -12,30 +12,104 @@
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <TextBlock Text="Список товаров" Margin="10" FontSize="20"/>
+            <TextBlock Text="Список блюд" 
+                       Margin="10" 
+                       FontSize="20"/>
 
-            <ItemsControl Grid.Row="1" ItemsSource="{Binding FilteredProducts}">
-                <ItemsControl.ItemsPanel>
+            <TextBlock Grid.Row="1" 
+                       Text="категории блюд" 
+                       Margin="10" 
+                       FontSize="20"/>
+            
+            <WrapPanel Grid.Row="2" HorizontalAlignment="Center">
+                
+                <ListView x:Name="lvCategoryDish" 
+                          d:ItemsSource="{d:SampleData ItemCount=5}"
+                          ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                    <ListView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel/>
+                        </ItemsPanelTemplate>
+                    </ListView.ItemsPanel>
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Border BorderThickness="1"
+                                    BorderBrush="Gray">
+                                <TextBlock Text="{Binding NameCategory}"
+                                           Margin="5 0"/>
+                            </Border>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </WrapPanel>
+
+
+
+            <ListView x:Name="LvDish" 
+                  Grid.Row="3" 
+                  d:ItemsSource="{d:SampleData ItemCount=5}"
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+
+                <ListView.ItemsPanel>
                     <ItemsPanelTemplate>
-                        <WrapPanel Orientation="Horizontal" IsItemsHost="True"/>
+                        <WrapPanel/>
                     </ItemsPanelTemplate>
-                </ItemsControl.ItemsPanel>
-                <ItemsControl.ItemTemplate>
+                </ListView.ItemsPanel>
+
+                <ListView.ItemTemplate>
                     <DataTemplate>
-                        <Border BorderBrush="Gray" BorderThickness="1" Margin="5" Padding="5">
+                        <Border BorderBrush="Gray"
+                            BorderThickness="2"
+                            Width="200"
+                            Height="300"
+                            Margin="16"
+                            CornerRadius="8">
                             <StackPanel>
-                                <Image Source="{Binding ImagePath}" Width="100" Height="100"/>
-                                <TextBlock Text="{Binding Name}" Margin="5"/>
-                                <TextBlock Text="{Binding Price}" Margin="5"/>
-                                <TextBlock Text="{Binding Weight}" Margin="5"/>
+                                
+                                <Image Source="{Binding PhotoDish}" 
+                                       Height="100"
+                                       Width="180" 
+                                       Margin="8">
+                                </Image>
+
+                                <TextBlock Text="{Binding NameDish}"
+                                       FontSize="18"
+                                       Margin="5 3"/>
+                                <TextBlock Text="{Binding PriceDish}"
+                                       FontSize="18"
+                                       Margin="5 3"/>
+                                <TextBlock Text="{Binding DiscrDish}"
+                                       FontSize="18"
+                                       Margin="5 3"
+                                       TextWrapping="Wrap" 
+                                           FontFamily="Arial Rounded MT Bold"/>
+
+                                <WrapPanel HorizontalAlignment="Center">
+                                    <Button x:Name="btnAddToCart"
+                                            Width="40"
+                                            Height="40"
+                                            HorizontalAlignment="Left"
+                                            Margin="30 5 0 0"
+                                            Background="{x:Null}"
+                                            BorderThickness="0"
+                                            Click="btnAddToCart_Click">
+                                        <Image Source="/Images/cart.png"/>
+                                    </Button>
+                                </WrapPanel>
+
                             </StackPanel>
+
                         </Border>
                     </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
+                </ListView.ItemTemplate>
+            </ListView>
+
         </Grid>
     </Grid>
 </Window>

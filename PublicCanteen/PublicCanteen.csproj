@@ -72,6 +72,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Windows\HistoryOfOrdersWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\ListOfDishesWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -131,6 +135,9 @@
     </Compile>
     <Compile Include="Windows\CartWindow.xaml.cs">
       <DependentUpon>CartWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\HistoryOfOrdersWindow.xaml.cs">
+      <DependentUpon>HistoryOfOrdersWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\ListOfDishesWindow.xaml.cs">
       <DependentUpon>ListOfDishesWindow.xaml</DependentUpon>

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PublicCanteen.Classes;
+using PublicCanteen.DB;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +24,13 @@ namespace PublicCanteen.Windows
         public CartWindow()
         {
             InitializeComponent();
+            GetCartDisd();
+
+        }
+
+        void GetCartDisd()
+        {
+            LvDishCart.ItemsSource = CartListClass.dishesCart.ToList();
         }
     }
 }

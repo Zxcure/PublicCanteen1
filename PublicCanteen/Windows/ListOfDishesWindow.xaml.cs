@@ -31,17 +31,19 @@ namespace PublicCanteen.Windows
             GetListCategoryDisd();
         }
 
-
+        // метод получения списка категорий блюд
         void GetListDisd()
         {
             LvDish.ItemsSource = EFClass.entities.Dish.ToList();
         }
 
+        // метод получения списка категорий блюд
         void GetListCategoryDisd()
         {
             lvCategoryDish.ItemsSource = EFClass.entities.CategoryDish.ToList();
         }
 
+        // добавление блюда в корзину
         private void btnAddToCart_Click(object sender, RoutedEventArgs e)
         {
             var button = sender as Button;
@@ -50,12 +52,24 @@ namespace PublicCanteen.Windows
                 return;
             }
             var dish = button.DataContext as DB.Dish; // получаем выбранную запись
-                      
 
-            CartListClass.dishes.Add(dish);
+            foreach (var item in CartListClass.dishesCart)
+            {
+                if (dish == item)
+                {
+                    item.CountDish++;
+                    return;
+                }
+            }
+            CartListClass.dishesCart.Add(dish);
+        }
 
-            GetListDisd();
-            GetListCategoryDisd();
+        // переход в корзину
+        private void btnCart_Click(object sender, RoutedEventArgs e)
+        {
+            CartWindow cartWindow = new CartWindow();   
+            cartWindow.Show();
+            this.Close();
         }
     }
 }

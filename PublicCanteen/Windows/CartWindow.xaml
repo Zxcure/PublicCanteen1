@@ -5,8 +5,110 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PublicCanteen.Windows"
         mc:Ignorable="d"
-        Title="CartWindow" Height="450" Width="800">
+        Title="CartWindow" 
+        WindowStartupLocation="CenterScreen" 
+        Height="600" Width="800">
     <Grid>
-        
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Корзина" 
+                     Margin="10" 
+                     FontSize="20"/> 
+
+                <ListView x:Name="lvCategoryDish" 
+                          Grid.Row="2" 
+                          d:ItemsSource="{d:SampleData ItemCount=5}"
+                          ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                    <ListView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel/>
+                        </ItemsPanelTemplate>
+                    </ListView.ItemsPanel>
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Border BorderThickness="1"
+                                  BorderBrush="Gray">
+                                <TextBlock Text="{Binding NameCategory}"
+                                         Margin="5 0"/>
+                            </Border>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+
+            <ListView x:Name="LvDishCart" 
+                Grid.Row="3" 
+                d:ItemsSource="{d:SampleData ItemCount=5}"
+                ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel/>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Border BorderBrush="Gray"
+                          BorderThickness="2"
+                          Width="200"
+                          Height="300"
+                          Margin="16"
+                          CornerRadius="8">
+                            <StackPanel>
+
+                                <Image Source="{Binding PhotoDish}" 
+                                     Height="100"
+                                     Width="180" 
+                                     Margin="8">
+                                </Image>
+
+                                <TextBlock Text="{Binding NameDish}"
+                                     FontSize="18"
+                                     Margin="5 3"/>
+                                <TextBlock Text="{Binding PriceDish}"
+                                     FontSize="18"
+                                     Margin="5 3"/>
+                                <TextBlock Text="{Binding DiscrDish}"
+                                     FontSize="18"
+                                     Margin="5 3"
+                                     TextWrapping="Wrap" 
+                                         FontFamily="Arial Rounded MT Bold"/>
+
+                                <WrapPanel HorizontalAlignment="Center">
+                                    <WrapPanel>
+                                        <Button Content="-"
+                                                Width="20"
+                                                Margin="5"
+                                                FontSize="18"
+                                                VerticalContentAlignment="Center"/>
+                                        
+                                        <TextBlock Text="{Binding CountDish}"
+                                                   Margin="5"
+                                                   Width="20"
+                                                   FontSize="18"/>
+                                        
+                                        <Button Content="+"
+                                                Margin="5"
+                                                Width="20"                                                
+                                                FontSize="18"
+                                                VerticalContentAlignment="Center"/>
+                                    </WrapPanel>
+                                </WrapPanel>
+
+                            </StackPanel>
+
+                        </Border>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </Grid>
     </Grid>
 </Window>

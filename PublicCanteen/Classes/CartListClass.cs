@@ -10,6 +10,6 @@ namespace PublicCanteen.Classes
 {
     internal class CartListClass
     {
-       public static List<Dish> dishes = new List<Dish>();
+       public static List<Dish> dishesCart = new List<Dish>();
     }
 }

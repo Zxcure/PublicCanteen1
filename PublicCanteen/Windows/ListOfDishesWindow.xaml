@@ -22,10 +22,24 @@
                        FontSize="20"/>
 
             <TextBlock Grid.Row="1" 
-                       Text="категории блюд" 
+                       Text="Категории блюд" 
                        Margin="10" 
                        FontSize="20"/>
+
+            <Button x:Name="btnCart" 
+                    Grid.Row="1" 
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Right"
+                    Background="{x:Null}"
+                    BorderThickness="0"
+                    Click="btnCart_Click">
+                <Image Source="/Images/cart.png" 
+                       Width="40" 
+                       Height="40"
+                       Margin="0 0 20 0" />
+            </Button>
             
+
             <WrapPanel Grid.Row="2" HorizontalAlignment="Center">
                 
                 <ListView x:Name="lvCategoryDish" 

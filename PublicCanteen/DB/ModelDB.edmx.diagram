@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8b1fe6698e6546ab8cb8f403f2c46051" Name="Diagram1">
+        <EntityTypeShape EntityType="PublicCanteenModel.CategoryDish" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PublicCanteenModel.Dish" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="PublicCanteenModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <AssociationConnector Association="PublicCanteenModel.FK_Dish_CategoryDish" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="PublicCanteenModel.Employee" Width="1.5" PointX="0.75" PointY="8.25" />
+        <EntityTypeShape EntityType="PublicCanteenModel.Order" Width="1.5" PointX="3" PointY="8.375" />
+        <EntityTypeShape EntityType="PublicCanteenModel.DishOrder" Width="1.5" PointX="5.25" PointY="1.25" />
+        <AssociationConnector Association="PublicCanteenModel.FK_DishOrder_Dish" />
+        <AssociationConnector Association="PublicCanteenModel.FK_Order_Employee" />
+        <AssociationConnector Association="PublicCanteenModel.FK_DishOrder_Order" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

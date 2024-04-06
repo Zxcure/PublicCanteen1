@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34622.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PublicCanteen", "PublicCanteen\PublicCanteen.csproj", "{F7DDA68E-6EF4-486D-88F7-59271423EBDE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F7DDA68E-6EF4-486D-88F7-59271423EBDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7DDA68E-6EF4-486D-88F7-59271423EBDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7DDA68E-6EF4-486D-88F7-59271423EBDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7DDA68E-6EF4-486D-88F7-59271423EBDE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3EC2A5C5-A7C7-4F5F-98A3-3611F2AEC576}
+	EndGlobalSection
+EndGlobal

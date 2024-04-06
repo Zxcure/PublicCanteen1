@@ -1,0 +1,54 @@
+﻿<Window x:Class="PublicCanteen.Windows.AuthWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PublicCanteen.Windows"
+        mc:Ignorable="d"
+               Title="AuthWindow" 
+        Height="600" 
+        Width="800"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <StackPanel VerticalAlignment="Center">
+            <TextBlock Text="Авторизация"
+                HorizontalAlignment="Center"
+                FontSize="40"
+                Margin="0 20 0 50"/>
+
+            <TextBox x:Name="txtLogin" 
+                     Text="Введите логин"
+                     Width="200"
+                     Height="40"
+                     FontSize="22"
+                     VerticalContentAlignment="Center"
+                     Foreground="Gray"
+                     Margin="0 0 0 50"
+                     GotFocus="txtLogin_GotFocus"
+                     LostFocus="txtLogin_LostFocus"/>
+
+            <TextBox x:Name="txtPassword" 
+                     Text="Введите пароль"
+                     Width="200"
+                     Height="40"
+                     FontSize="22"
+                     VerticalContentAlignment="Center"
+                     Foreground="Gray"
+                     GotFocus="txtPassword_GotFocus"
+                     LostFocus="txtPassword_LostFocus"/>
+
+            <Button x:Name="btnligin" 
+                    Content="Войти"
+                    FontSize="22"
+                    Width="200"
+                    Height="40"
+                    Margin="0 50 0 50"
+                    Click="btnligin_Click"/>
+
+        </StackPanel>
+
+       
+    </Grid>
+</Window>
+
+

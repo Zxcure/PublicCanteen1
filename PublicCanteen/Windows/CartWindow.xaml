@@ -8,17 +8,29 @@
         Title="CartWindow" 
         WindowStartupLocation="CenterScreen" 
         Height="600" Width="800">
-    <Grid>
+    
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
                 <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
             </Grid.RowDefinitions>
 
-            <TextBlock Text="Корзина" 
-                     Margin="10" 
-                     FontSize="20"/> 
+            
+                <TextBlock Text="Корзина" 
+                           Margin="10" 
+                           FontSize="20"/>
+
+                <Button x:Name="btnBackToList"
+                        Content="Назад"
+                        Width="100"
+                        Height="30"
+                        HorizontalAlignment="Right"
+                        Margin="0 0 10 0"
+                        Click="btnBackToList_Click"/>
+            
 
                 <ListView x:Name="lvCategoryDish" 
                           Grid.Row="2" 
@@ -83,22 +95,26 @@
 
                                 <WrapPanel HorizontalAlignment="Center">
                                     <WrapPanel>
-                                        <Button Content="-"
+                                        <Button x:Name="btnMinus" 
+                                                Content="-"
                                                 Width="20"
                                                 Margin="5"
                                                 FontSize="18"
-                                                VerticalContentAlignment="Center"/>
+                                                VerticalContentAlignment="Center"
+                                                Click="btnMinus_Click"/>
                                         
                                         <TextBlock Text="{Binding CountDish}"
                                                    Margin="5"
                                                    Width="20"
                                                    FontSize="18"/>
                                         
-                                        <Button Content="+"
+                                        <Button x:Name="btnPlus" 
+                                                Content="+"
                                                 Margin="5"
                                                 Width="20"                                                
                                                 FontSize="18"
-                                                VerticalContentAlignment="Center"/>
+                                                VerticalContentAlignment="Center"
+                                                Click="btnPlus_Click"/>
                                     </WrapPanel>
                                 </WrapPanel>
 
@@ -109,6 +125,14 @@
                 </ListView.ItemTemplate>
             </ListView>
 
-        </Grid>
+        <Button x:Name="btnBuy" 
+                Grid.Row="4"
+                Height="30"
+                Content="Оформитиь паокупку"
+                Width="150"
+                HorizontalAlignment="Right"
+                Margin="0 0 10 0"
+                Click="btnBuy_Click"/>
     </Grid>
+ 
 </Window>

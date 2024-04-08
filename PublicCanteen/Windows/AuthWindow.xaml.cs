@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 
 using PublicCanteen.Windows;
 using PublicCanteen.DB;
+using PublicCanteen.Classes;
 
 namespace PublicCanteen.Windows
 {
@@ -34,6 +35,8 @@ namespace PublicCanteen.Windows
 
             if (userAuth != null)
             {
+                UserDataClass.userAuth = userAuth;
+
                 ListOfDishesWindow listOfDishesWindow = new ListOfDishesWindow();
                 listOfDishesWindow.Show();
                 this.Close();

@@ -29,10 +29,11 @@ namespace PublicCanteen.DB
     
         public virtual DbSet<CategoryDish> CategoryDish { get; set; }
         public virtual DbSet<Dish> Dish { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<DishOrder> DishOrder { get; set; }
         public virtual DbSet<Employee> Employee { get; set; }
         public virtual DbSet<Order> Order { get; set; }
-        public virtual DbSet<DishOrder> DishOrder { get; set; }
+        public virtual DbSet<RoleEmployee> RoleEmployee { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {

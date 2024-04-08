@@ -90,6 +90,7 @@
     </Compile>
     <Compile Include="Classes\CartListClass.cs" />
     <Compile Include="Classes\DishCartClass.cs" />
+    <Compile Include="Classes\UserDataClass.cs" />
     <Compile Include="DB\CategoryDish.cs">
       <DependentUpon>ModelDB.tt</DependentUpon>
     </Compile>
@@ -119,6 +120,9 @@
       <DependentUpon>ModelDB.edmx</DependentUpon>
     </Compile>
     <Compile Include="DB\Order.cs">
+      <DependentUpon>ModelDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\RoleEmployee.cs">
       <DependentUpon>ModelDB.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\sp_helpdiagramdefinition_Result.cs">

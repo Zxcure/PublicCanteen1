@@ -28,67 +28,79 @@
             BorderBrush="Gray"
             CornerRadius="16">
                     <!-- Здесь будет изображение -->
+                    <Image x:Name="imgImageDish"/>
                 </Border>
 
                 <Button x:Name="btnAddImage" 
-            Content="Добавить изображение"
-            Width="300"
-            Height="30"
-            Margin="8"
-            Click="btnAddImage_Click"/>
+                        Content="Добавить изображение"
+                        Width="300"
+                        Height="30"
+                        Margin="8"
+                        Click="btnAddImage_Click"/>
 
                 <TextBlock Text="Наименование"
-               HorizontalAlignment="Center"
-               FontSize="22"
-               Margin="8"/>
+                           HorizontalAlignment="Center"
+                           FontSize="22"
+                           Margin="8"/>
 
-                <TextBox Text="Введите название блюда"
-             Width="300"
-             Height="30"
-             Margin="8"/>
+                <TextBox x:Name="txtNameDish" 
+                         Text="Введите название блюда"
+                         Width="300"
+                         Height="30"
+                         Margin="8"/>
 
                 <TextBlock Text="Описание"
-               HorizontalAlignment="Center"
-               FontSize="22"
-               Margin="8"/>
+                           HorizontalAlignment="Center"
+                           FontSize="22"
+                           Margin="8"/>
 
-                <TextBox Text="Введите описание блюда"
-             Width="300"
-             Height="30"
-             Margin="8"/>
+                <TextBox x:Name="txtDiscDish" 
+                         Text="Введите описание блюда"
+                         Width="300"
+                         Height="30"
+                         Margin="8"/>
 
                 <TextBlock Text="Цена"
-               HorizontalAlignment="Center"
-               FontSize="22"
-               Margin="8"/>
+                           HorizontalAlignment="Center"
+                           FontSize="22"
+                           Margin="8"/>
 
-                <TextBox Text="Введите цену блюда"
-             Width="300"
-             Height="30"
-             Margin="8"/>
+                <TextBox x:Name="txtPriceDish" 
+                         Text="Введите цену блюда"
+                         Width="300"
+                         Height="30"
+                         Margin="8"/>
 
                 <TextBlock Text="Масса"
-               HorizontalAlignment="Center"
-               FontSize="22"
-               Margin="8"/>
+                           HorizontalAlignment="Center"
+                           FontSize="22"
+                           Margin="8"/>
 
-                <TextBox Text="Введите массу блюда"
-             Width="300"
-             Height="30"
-             Margin="8"/>
+                <TextBox x:Name="txtWeightDish" 
+                         Text="Введите массу блюда"
+                         Width="300"
+                         Height="30"
+                         Margin="8"/>
 
                 <TextBlock Text="Категория"
-               HorizontalAlignment="Center"
-               FontSize="22"
-               Margin="8"/>
+                           HorizontalAlignment="Center"
+                           FontSize="22"
+                           Margin="8"/>
 
-                <ComboBox Text="Веберите категороию блюда"
-             Width="300"
-             Height="30"
-             Margin="8"/>
+                <ComboBox x:Name="cmbCategoryDish" 
+                          Text="Веберите категороию блюда"
+                          Width="300"
+                          Height="30"
+                          Margin="8"/>
 
+                <Button x:Name="btnAddDish"
+                        Content="Добавить блюдо"
+                        Width="200"
+                        Height="40"
+                        FontSize="22"
+                        Click="btnAddDish_Click"/>
             </StackPanel>
         </ScrollViewer>
-        
+
     </Grid>
 </Window>

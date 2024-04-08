@@ -74,10 +74,13 @@ namespace PublicCanteen.Windows
             this.Close();
         }
 
+        //Переход на окно добавления блюда
         private void btnAddDish_Click(object sender, RoutedEventArgs e)
         {
             AddDishWindow addDishWindow = new AddDishWindow();  
-            addDishWindow.ShowDialog();            
+            addDishWindow.ShowDialog();
+
+            GetListDisd();
         }
 
         private void btnEditDish_Click(object sender, RoutedEventArgs e)
@@ -86,6 +89,7 @@ namespace PublicCanteen.Windows
             editDishWindow.ShowDialog();
         }
 
+        // удаление блюда
         private void btnDelDish_Click(object sender, RoutedEventArgs e)
         {
             // получаем выбранную запись

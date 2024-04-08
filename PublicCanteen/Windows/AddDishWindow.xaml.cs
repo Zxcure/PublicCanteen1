@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using PublicCanteen.DB;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,14 +21,52 @@ namespace PublicCanteen.Windows
     /// </summary>
     public partial class AddDishWindow : Window
     {
+
+        string pathImage;
         public AddDishWindow()
         {
             InitializeComponent();
+
+            // заполнение категории
+            cmbCategoryDish.ItemsSource = EFClass.entities.CategoryDish.ToList();
+            cmbCategoryDish.DisplayMemberPath = "NameCategory";
+            cmbCategoryDish.SelectedIndex = 0;
         }
 
+        // добавление изображения
         private void btnAddImage_Click(object sender, RoutedEventArgs e)
         {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true)
+            {
+                imgImageDish.Source = new BitmapImage(new Uri(openFileDialog.FileName));
 
+                pathImage = openFileDialog.FileName;
+            }
+        }
+        //добавление нового блюда 
+        private void btnAddDish_Click(object sender, RoutedEventArgs e)
+        {
+            DB.Dish newDish = new DB.Dish();
+            newDish.NameDish = txtNameDish.Text;
+            newDish.DiscrDish = txtDiscDish.Text;
+            newDish.PriceDish = Int32.Parse(txtPriceDish.Text);
+            newDish.WeightDish = Int32.Parse(txtWeightDish.Text);
+
+            if (pathImage != null)
+            {
+                newDish.PhotoDish = pathImage;
+            }
+
+            newDish.IdCategoryDish = (cmbCategoryDish.SelectedItem as DB.CategoryDish).IdCategory;
+
+            EFClass.entities.Dish.Add(newDish);
+
+            EFClass.entities.SaveChanges();
+
+            MessageBox.Show("Блюдо успешно добавлено");
+
+            this.Close();
         }
     }
 }

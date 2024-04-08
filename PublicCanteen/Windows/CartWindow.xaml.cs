@@ -84,11 +84,11 @@ namespace PublicCanteen.Windows
         private void btnBuy_Click(object sender, RoutedEventArgs e)
         {
             //добавление нового заказа
-            //var newOrder = new DB.Order();
-            //newOrder.IdEmployee = UserDataClass.userAuth.IdEmployee;
-            //newOrder.DateTimeOrder = DateTime.Now;
-            //EFClass.entities.Order.Add(newOrder);
-            //EFClass.entities.SaveChanges();
+            var newOrder = new DB.Order();
+            newOrder.IdEmployee = UserDataClass.userAuth.IdEmployee;
+            newOrder.DateTimeOrder = DateTime.Now;
+            EFClass.entities.Order.Add(newOrder);
+            EFClass.entities.SaveChanges();
 
 
             // добавление купленных товаров 

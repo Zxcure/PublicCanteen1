@@ -9,17 +9,31 @@
         WindowStartupLocation="CenterScreen"
         Height="600" Width="800">
     <Grid>
-        <Grid>
+        
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
             </Grid.RowDefinitions>
 
             <TextBlock Text="Список блюд" 
                        Margin="10" 
                        FontSize="20"/>
+
+            <WrapPanel HorizontalAlignment="Right">
+                
+                <TextBlock Text="Работник: " 
+                           Margin="10" 
+                           FontSize="20"/>
+
+                <TextBlock x:Name="tbNameEmpl" 
+                           Text="ФИО" 
+                           Margin="10" 
+                           FontSize="20"/>
+            </WrapPanel>
+            
 
             <TextBlock Grid.Row="1" 
                        Text="Категории блюд" 
@@ -124,6 +138,34 @@
                 </ListView.ItemTemplate>
             </ListView>
 
-        </Grid>
+        <WrapPanel Grid.Row="4" 
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center">
+            
+            <Button x:Name="btnAddDish" 
+                    Content="Добавить блюдо"
+                    FontSize="16"
+                    Width="150"
+                    Height="40"
+                    Margin="16 0"
+                    Click="btnAddDish_Click"/>
+
+            <Button x:Name="btnEditDish" 
+                    Content="Изменить блюдо"
+                    FontSize="16"
+                    Width="150"
+                    Height="40"
+                    Margin="16 0"
+                    Click="btnEditDish_Click"/>
+
+            <Button x:Name="btnDelDish"
+                    Content="Удалить блюдо"
+                    FontSize="16"
+                    Width="150"
+                    Height="40"
+                    Margin="16 0"
+                    Click="btnDelDish_Click"/>
+
+        </WrapPanel>
     </Grid>
 </Window>

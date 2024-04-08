@@ -29,6 +29,8 @@ namespace PublicCanteen.Windows
 
             GetListDisd();
             GetListCategoryDisd();
+
+            tbNameEmpl.Text = UserDataClass.userAuth.LastNameEmployee + " " + UserDataClass.userAuth.FirstNameEmployee + " " + UserDataClass.userAuth.PatronymicName;
         }
 
         // метод получения списка категорий блюд
@@ -70,6 +72,36 @@ namespace PublicCanteen.Windows
             CartWindow cartWindow = new CartWindow();   
             cartWindow.Show();
             this.Close();
+        }
+
+        private void btnAddDish_Click(object sender, RoutedEventArgs e)
+        {
+            AddDishWindow addDishWindow = new AddDishWindow();  
+            addDishWindow.ShowDialog();            
+        }
+
+        private void btnEditDish_Click(object sender, RoutedEventArgs e)
+        {
+            EditDishWindow editDishWindow = new EditDishWindow();
+            editDishWindow.ShowDialog();
+        }
+
+        private void btnDelDish_Click(object sender, RoutedEventArgs e)
+        {
+            // получаем выбранную запись
+            if (LvDish.SelectedItem is DB.Dish)
+            {
+                EFClass.entities.Dish.Remove(LvDish.SelectedItem as Dish);
+                EFClass.entities.SaveChanges();
+            }
+            else
+            {
+                MessageBox.Show("Что-то пошло не так");
+            }
+
+            MessageBox.Show("Удаление прошло успешно");
+
+            GetListDisd();
         }
     }
 }

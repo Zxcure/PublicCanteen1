@@ -64,11 +64,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Windows\AddDishWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\AuthWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\CartWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\EditDishWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -134,11 +142,17 @@
     <Compile Include="DB\sysdiagrams.cs">
       <DependentUpon>ModelDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Windows\AddDishWindow.xaml.cs">
+      <DependentUpon>AddDishWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\AuthWindow.xaml.cs">
       <DependentUpon>AuthWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\CartWindow.xaml.cs">
       <DependentUpon>CartWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\EditDishWindow.xaml.cs">
+      <DependentUpon>EditDishWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\HistoryOfOrdersWindow.xaml.cs">
       <DependentUpon>HistoryOfOrdersWindow.xaml</DependentUpon>

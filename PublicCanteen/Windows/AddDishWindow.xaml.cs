@@ -40,7 +40,6 @@ namespace PublicCanteen.Windows
             if (openFileDialog.ShowDialog() == true)
             {
                 imgImageDish.Source = new BitmapImage(new Uri(openFileDialog.FileName));
-
                 pathImage = openFileDialog.FileName;
             }
         }
@@ -59,13 +58,9 @@ namespace PublicCanteen.Windows
             }
 
             newDish.IdCategoryDish = (cmbCategoryDish.SelectedItem as DB.CategoryDish).IdCategory;
-
             EFClass.entities.Dish.Add(newDish);
-
             EFClass.entities.SaveChanges();
-
             MessageBox.Show("Блюдо успешно добавлено");
-
             this.Close();
         }
     }

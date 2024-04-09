@@ -83,10 +83,23 @@ namespace PublicCanteen.Windows
             GetListDisd();
         }
 
+        // изменение выбранного блюда
         private void btnEditDish_Click(object sender, RoutedEventArgs e)
         {
-            EditDishWindow editDishWindow = new EditDishWindow();
-            editDishWindow.ShowDialog();
+            // получаем выбранную запись
+            if (LvDish.SelectedItem is DB.Dish)
+            {
+                EditDishWindow editDishWindow = new EditDishWindow(LvDish.SelectedItem as Dish);
+                editDishWindow.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Что-то пошло не так");
+            }
+
+            GetListDisd();
+
+           
         }
 
         // удаление блюда

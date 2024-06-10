@@ -46,10 +46,14 @@ namespace PublicCanteen.Windows
         //добавление нового блюда 
         private void btnAddDish_Click(object sender, RoutedEventArgs e)
         {
+            if (txtNameDish.Text == "Введите название блюда")
+            {
+                MessageBox.Show("Название блюда не может быть пустым", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
             DB.Dish newDish = new DB.Dish();
             newDish.NameDish = txtNameDish.Text;
             newDish.DiscrDish = txtDiscDish.Text;
-            newDish.PriceDish = Int32.Parse(txtPriceDish.Text);
+            newDish.PriceDish = Decimal.Parse(txtPriceDish.Text);
             newDish.WeightDish = Int32.Parse(txtWeightDish.Text);
 
             if (pathImage != null)

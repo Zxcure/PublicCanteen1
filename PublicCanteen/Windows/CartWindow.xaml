@@ -15,7 +15,8 @@
                 <RowDefinition Height="50"/>
                 <RowDefinition Height="50"/>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="50"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
             </Grid.RowDefinitions>
 
             
@@ -73,65 +74,81 @@
                           Height="300"
                           Margin="16"
                           CornerRadius="8">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="40"/>
+                            </Grid.RowDefinitions>
                             <StackPanel>
 
                                 <Image Source="{Binding PhotoDish}" 
-                                     Height="100"
-                                     Width="180" 
-                                     Margin="8">
+         Height="100"
+         Width="180" 
+         Margin="8">
                                 </Image>
 
                                 <TextBlock Text="{Binding NameDish}"
-                                     FontSize="18"
-                                     Margin="5 3"/>
+         FontSize="18"
+         Margin="5 3"/>
                                 <TextBlock Text="{Binding PriceDish}"
-                                     FontSize="18"
-                                     Margin="5 3"/>
+         FontSize="18"
+         Margin="5 3"/>
                                 <TextBlock Text="{Binding DiscrDish}"
-                                     FontSize="18"
-                                     Margin="5 3"
-                                     TextWrapping="Wrap" 
-                                         FontFamily="Arial Rounded MT Bold"/>
-
-                                <WrapPanel HorizontalAlignment="Center">
-                                    <WrapPanel>
-                                        <Button x:Name="btnMinus" 
-                                                Content="-"
-                                                Width="20"
-                                                Margin="5"
-                                                FontSize="18"
-                                                VerticalContentAlignment="Center"
-                                                Click="btnMinus_Click"/>
-                                        
-                                        <TextBlock Text="{Binding CountDish}"
-                                                   Margin="5"
-                                                   Width="20"
-                                                   FontSize="18"/>
-                                        
-                                        <Button x:Name="btnPlus" 
-                                                Content="+"
-                                                Margin="5"
-                                                Width="20"                                                
-                                                FontSize="18"
-                                                VerticalContentAlignment="Center"
-                                                Click="btnPlus_Click"/>
-                                    </WrapPanel>
-                                </WrapPanel>
-
+         FontSize="18"
+         Margin="5 3"
+         TextWrapping="Wrap" 
+             FontFamily="Arial Rounded MT Bold"/>
                             </StackPanel>
+                            <WrapPanel Grid.Row="1" 
+                                       HorizontalAlignment="Center">
+                                <WrapPanel>
+                                    <Button x:Name="btnMinus" 
+Content="-"
+Width="20"
+Margin="5"
+FontSize="18"
+VerticalContentAlignment="Center"
+Click="btnMinus_Click"/>
+
+                                    <TextBlock Text="{Binding CountDish}"
+   Margin="5"
+   Width="20"
+   FontSize="18"/>
+
+                                    <Button x:Name="btnPlus" 
+Content="+"
+Margin="5"
+Width="20"                                                
+FontSize="18"
+VerticalContentAlignment="Center"
+Click="btnPlus_Click"/>
+                                </WrapPanel>
+                            </WrapPanel>
+                        </Grid>
+                            
 
                         </Border>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
 
+        <TextBlock x:Name="txtSumma"
+                   Grid.Row="4"
+                   FontSize="24"
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Center"
+                   Margin="0 0 40 0"
+                   Text="321"/>
+
         <Button x:Name="btnBuy" 
-                Grid.Row="4"
-                Height="30"
-                Content="Оформитиь паокупку"
-                Width="150"
+                Grid.Row="5"
+                Height="60"
+                FontSize="16"
+                Content="Оформить покупку"
+                Width="200"
                 HorizontalAlignment="Right"
                 Margin="0 0 10 0"
+                Background="#FF1CAC78"
                 Click="btnBuy_Click"/>
     </Grid>
  

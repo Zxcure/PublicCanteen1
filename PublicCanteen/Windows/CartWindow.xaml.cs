@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Shell;
 
 namespace PublicCanteen.Windows
 {
@@ -31,6 +32,15 @@ namespace PublicCanteen.Windows
         void GetCartDisd()
         {
             LvDishCart.ItemsSource = CartListClass.dishesCart.ToList();
+
+            //сумма заказа
+            decimal summ = 0;
+
+            foreach (var item in CartListClass.dishesCart.ToList())
+            {
+                summ += item.PriceDish;
+            }
+            txtSumma.Text = "Сумма заказа " + summ.ToString() + " рублей"; 
         }
 
         private void btnMinus_Click(object sender, RoutedEventArgs e)
@@ -83,6 +93,12 @@ namespace PublicCanteen.Windows
 
         private void btnBuy_Click(object sender, RoutedEventArgs e)
         {
+            if (LvDishCart.Items.Count==0)
+            {
+                MessageBox.Show("Корзина пуста. Добавьте товары в нее для совершения заказа");
+                return;
+            }
+
             //добавление нового заказа
             var newOrder = new DB.Order();
             newOrder.IdEmployee = UserDataClass.userAuth.IdEmployee;
@@ -108,7 +124,7 @@ namespace PublicCanteen.Windows
                 }
             }
 
-            MessageBox.Show("Заказ оформлен!");
+            MessageBox.Show("Заказ оформлен!", "Операция выполнена успешно",  MessageBoxButton.OK, MessageBoxImage.Information);
 
             //закрытие окна заказа
             ListOfDishesWindow listOfDishesWindow = new ListOfDishesWindow();

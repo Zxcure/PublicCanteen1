@@ -98,6 +98,7 @@
                         Width="200"
                         Height="40"
                         FontSize="22"
+                        Background="#FF1CAC78"
                         Click="btnAddDish_Click"/>
             </StackPanel>
         </ScrollViewer>

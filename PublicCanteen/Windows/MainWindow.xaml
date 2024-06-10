@@ -22,10 +22,11 @@
                    Margin="0 20 0 50"/>
 
             <Button x:Name="btnLogin" 
-                Content="Войти"
-                FontSize="22"
-                Width="200"
-                Height="40"
+                    Content="Войти"
+                    FontSize="22"
+                    Width="200"
+                    Height="40"
+                    Background="#FF1CAC78"
                 Click="btnLogin_Click"/>
 
            

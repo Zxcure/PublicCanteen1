@@ -62,7 +62,7 @@ namespace PublicCanteen.Windows
             
             editDish.NameDish = txtNameDish.Text;
             editDish.DiscrDish = txtDiscDish.Text;
-            editDish.PriceDish = Int32.Parse(txtPriceDish.Text);
+            editDish.PriceDish = Decimal.Parse(txtPriceDish.Text);
             editDish.WeightDish = Int32.Parse(txtWeightDish.Text);
 
             if (pathImage != null)

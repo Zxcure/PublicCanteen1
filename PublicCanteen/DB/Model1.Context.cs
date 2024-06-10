@@ -15,10 +15,10 @@ namespace PublicCanteen.DB
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class Entities : DbContext
+    public partial class Entitiess : DbContext
     {
-        public Entities()
-            : base("name=Entities")
+        public Entitiess()
+            : base("name=Entitiess")
         {
         }
     

@@ -86,5 +86,10 @@ namespace PublicCanteen.Windows
                 txtPassword.Text = "Введите пароль";
             }
         }
+
+        private void txtLogin_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

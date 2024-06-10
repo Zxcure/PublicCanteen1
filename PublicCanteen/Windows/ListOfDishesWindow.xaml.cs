@@ -120,5 +120,23 @@ namespace PublicCanteen.Windows
 
             GetListDisd();
         }
+
+
+        private void txbSerch_Click(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            if (button == null)
+            {
+                return;
+            }
+            var dish = button.DataContext as DB.CategoryDish; // получаем выбранную запись
+
+            LvDish.ItemsSource = EFClass.entities.Dish.Where(p => p.CategoryDish.NameCategory == dish.NameCategory.ToString()).ToList();
+        }
+
+        private void btnRes_Click(object sender, RoutedEventArgs e)
+        {
+            GetListDisd();
+        }
     }
 }

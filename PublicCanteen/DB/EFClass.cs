@@ -8,6 +8,6 @@ namespace PublicCanteen.DB
 {
     internal class EFClass
     {
-       public static Entities entities = new Entities();
+       public static Entitiess entities = new Entitiess();
     }
 }

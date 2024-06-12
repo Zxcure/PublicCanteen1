@@ -86,7 +86,7 @@ namespace PublicCanteen.Windows
 
         private void btnBackToList_Click(object sender, RoutedEventArgs e)
         {
-            ListOfDishesWindow listOfDishesWindow = new ListOfDishesWindow();
+            ListOfDishesWindow listOfDishesWindow = new ListOfDishesWindow(UserDataClass.userAuth);
             listOfDishesWindow.Show();
             this.Close();
         }

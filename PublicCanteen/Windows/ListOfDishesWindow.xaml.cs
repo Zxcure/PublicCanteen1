@@ -33,6 +33,31 @@ namespace PublicCanteen.Windows
             tbNameEmpl.Text = UserDataClass.userAuth.LastNameEmployee + " " + UserDataClass.userAuth.FirstNameEmployee + " " + UserDataClass.userAuth.PatronymicName;
         }
 
+        public ListOfDishesWindow(Employee employee)
+        {
+            InitializeComponent();
+
+            GetListDisd();
+            GetListCategoryDisd();
+            VisilityIcon(employee);
+
+            tbNameEmpl.Text = UserDataClass.userAuth.LastNameEmployee + " " + UserDataClass.userAuth.FirstNameEmployee + " " + UserDataClass.userAuth.PatronymicName;
+        }
+
+        public void VisilityIcon(Employee employee)
+        {
+            if (employee.IdRole == 1)
+            {
+                btnCart.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                btnAddDish.Visibility = Visibility.Collapsed;
+                btnEditDish.Visibility = Visibility.Collapsed;
+                btnDelDish.Visibility = Visibility.Collapsed;
+            }
+        }
+
         // метод получения списка категорий блюд
         void GetListDisd()
         {
@@ -69,7 +94,7 @@ namespace PublicCanteen.Windows
         // переход в корзину
         private void btnCart_Click(object sender, RoutedEventArgs e)
         {
-            CartWindow cartWindow = new CartWindow();   
+            CartWindow cartWindow = new CartWindow();
             cartWindow.Show();
             this.Close();
         }
@@ -77,7 +102,7 @@ namespace PublicCanteen.Windows
         //Переход на окно добавления блюда
         private void btnAddDish_Click(object sender, RoutedEventArgs e)
         {
-            AddDishWindow addDishWindow = new AddDishWindow();  
+            AddDishWindow addDishWindow = new AddDishWindow();
             addDishWindow.ShowDialog();
 
             GetListDisd();
@@ -99,7 +124,7 @@ namespace PublicCanteen.Windows
 
             GetListDisd();
 
-           
+
         }
 
         // удаление блюда

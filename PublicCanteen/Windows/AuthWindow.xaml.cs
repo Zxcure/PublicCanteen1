@@ -37,7 +37,7 @@ namespace PublicCanteen.Windows
             {
                 UserDataClass.userAuth = userAuth;
 
-                ListOfDishesWindow listOfDishesWindow = new ListOfDishesWindow();
+                ListOfDishesWindow listOfDishesWindow = new ListOfDishesWindow(UserDataClass.userAuth);
                 listOfDishesWindow.Show();
                 this.Close();
             }

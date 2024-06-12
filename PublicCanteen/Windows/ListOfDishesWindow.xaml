@@ -25,7 +25,7 @@
 
             <WrapPanel HorizontalAlignment="Right">
                 
-                <TextBlock Text="Работник: " 
+                <TextBlock Text="Должность: " 
                            Margin="10" 
                            FontSize="20"/>
 

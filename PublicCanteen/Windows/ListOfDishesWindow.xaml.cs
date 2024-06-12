@@ -30,7 +30,9 @@ namespace PublicCanteen.Windows
             GetListDisd();
             GetListCategoryDisd();
 
-            tbNameEmpl.Text = UserDataClass.userAuth.LastNameEmployee + " " + UserDataClass.userAuth.FirstNameEmployee + " " + UserDataClass.userAuth.PatronymicName;
+            var emp = EFClass.entities.RoleEmployee.Where(i => i.IdRole == UserDataClass.userAuth.IdRole).ToList();
+            RoleEmployee roleEmployee = emp.FirstOrDefault();
+            tbNameEmpl.Text = roleEmployee.NameRole;
         }
 
         public ListOfDishesWindow(Employee employee)
@@ -41,7 +43,9 @@ namespace PublicCanteen.Windows
             GetListCategoryDisd();
             VisilityIcon(employee);
 
-            tbNameEmpl.Text = UserDataClass.userAuth.LastNameEmployee + " " + UserDataClass.userAuth.FirstNameEmployee + " " + UserDataClass.userAuth.PatronymicName;
+            var emp = EFClass.entities.RoleEmployee.Where(i => i.IdRole == UserDataClass.userAuth.IdRole).ToList();
+            RoleEmployee roleEmployee = emp.FirstOrDefault();
+            tbNameEmpl.Text = roleEmployee.NameRole;
         }
 
         public void VisilityIcon(Employee employee)

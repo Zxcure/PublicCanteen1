@@ -38,9 +38,9 @@ namespace PublicCanteen.Windows
 
             foreach (var item in CartListClass.dishesCart.ToList())
             {
-                summ += item.PriceDish;
+                summ += item.PriceDish * item.CountDish;
             }
-            txtSumma.Text = "Сумма заказа " + summ.ToString() + " рублей"; 
+            txtSumma.Text = "Сумма заказа " + summ.ToString() + " рублей";
         }
 
         private void btnMinus_Click(object sender, RoutedEventArgs e)
